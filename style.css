@@ -1,0 +1,167 @@
+:root {
+  --bg: #0f172a;
+  --panel: #111827;
+  --panel-2: #1f2937;
+  --text: #e5e7eb;
+  --muted: #94a3b8;
+  --accent: #2563eb;
+  --accent-hover: #1d4ed8;
+  --light-square: #f0d9b5;
+  --dark-square: #b58863;
+  --border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(180deg, #0b1220, var(--bg));
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1100px, calc(100% - 32px));
+  margin: 32px auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 40px);
+}
+
+.header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.card {
+  background: rgba(17, 24, 39, 0.95);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: end;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-weight: bold;
+}
+
+.input-group input {
+  width: 140px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel-2);
+  color: var(--text);
+  font-size: 16px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background: var(--accent);
+  transition: transform 0.15s ease, background 0.15s ease, opacity 0.15s ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.status {
+  margin-top: 18px;
+}
+
+#infoLabel {
+  margin: 0;
+  color: var(--text);
+}
+
+.board-wrapper {
+  margin-top: 18px;
+  overflow-x: auto;
+}
+
+.board {
+  display: grid;
+  gap: 0;
+  justify-content: start;
+  min-height: 120px;
+}
+
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+.axis-cell {
+  background: transparent;
+  color: var(--text);
+  font-weight: bold;
+  border: none;
+}
+
+.square-light {
+  background: var(--light-square);
+}
+
+.square-dark {
+  background: var(--dark-square);
+}
+
+.queen {
+  color: #111827;
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: min(100% - 20px, 1100px);
+    margin: 18px auto;
+  }
+
+  .card {
+    padding: 16px;
+  }
+}
